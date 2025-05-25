@@ -6,8 +6,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fermion.EventBus.Base", "sr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fermion.EventBus.InMemory", "src\Fermion.EventBus.InMemory\Fermion.EventBus.InMemory.csproj", "{9A8B871E-8D72-42D8-98DD-DFF3B571DDB5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "WebApi\WebApi.csproj", "{DFFA0AEA-249E-4B41-AAF7-142488247D52}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fermion.EventBus.RabbitMq", "src\Fermion.EventBus.RabbitMq\Fermion.EventBus.RabbitMq.csproj", "{E6049B6C-49B8-47F2-B049-0FF08FE7230B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fermion.EventBus.AzureServiceBus", "src\Fermion.EventBus.AzureServiceBus\Fermion.EventBus.AzureServiceBus.csproj", "{35856093-FE7F-469E-BB24-9BEBD74C0501}"
@@ -32,10 +30,6 @@ Global
 		{9A8B871E-8D72-42D8-98DD-DFF3B571DDB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9A8B871E-8D72-42D8-98DD-DFF3B571DDB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9A8B871E-8D72-42D8-98DD-DFF3B571DDB5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DFFA0AEA-249E-4B41-AAF7-142488247D52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DFFA0AEA-249E-4B41-AAF7-142488247D52}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DFFA0AEA-249E-4B41-AAF7-142488247D52}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DFFA0AEA-249E-4B41-AAF7-142488247D52}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E6049B6C-49B8-47F2-B049-0FF08FE7230B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E6049B6C-49B8-47F2-B049-0FF08FE7230B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E6049B6C-49B8-47F2-B049-0FF08FE7230B}.Release|Any CPU.ActiveCfg = Release|Any CPU

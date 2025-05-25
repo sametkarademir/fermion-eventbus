@@ -4,13 +4,23 @@
         <TargetFramework>net8.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <PackageId>Fermion.EventBus.AzureServiceBus</PackageId>
+        <Version>0.0.2</Version>
+        <Authors>Samet Karademir</Authors>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <RepositoryUrl>https://github.com/sametkarademir/fermion-eventbus</RepositoryUrl>
+        <PackageReadmeFile>readme.md</PackageReadmeFile>
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Fermion.EventBus.Base\Fermion.EventBus.Base.csproj" />
+        <None Update="readme.md">
+            <Pack>true</Pack>
+            <PackagePath>/</PackagePath>
+        </None>
     </ItemGroup>
 
     <ItemGroup>
+        <PackageReference Include="Fermion.EventBus.Base" Version="0.0.2" />
         <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks" Version="9.0.3" />
         <PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.3"/>
         <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.3" />

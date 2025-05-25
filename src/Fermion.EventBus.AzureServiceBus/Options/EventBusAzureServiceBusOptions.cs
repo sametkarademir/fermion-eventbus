@@ -9,11 +9,6 @@ namespace Fermion.EventBus.AzureServiceBus.Options;
 public class EventBusAzureServiceBusOptions
 {
     /// <summary>
-    /// Gets or sets the number of connection retry attempts.
-    /// </summary>
-    public int ConnectionRetryCount { get; set; } = 5;
-
-    /// <summary>
     /// Gets or sets the default topic name for event publishing.
     /// </summary>
     public string DefaultTopicName { get; set; } = "DefaultTopic";

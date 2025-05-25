@@ -32,7 +32,7 @@ public class AzureServiceBusEventBusHealthCheck : IHealthCheck
             };
 
             await sender.SendMessageAsync(message, cancellationToken);
-            
+
             return HealthCheckResult.Healthy("Azure Service Bus is healthy");
         }
         catch (Exception ex)
@@ -41,4 +41,4 @@ public class AzureServiceBusEventBusHealthCheck : IHealthCheck
             return HealthCheckResult.Unhealthy("Azure Service Bus is unhealthy", ex);
         }
     }
-} 
+}

@@ -33,7 +33,6 @@ public static class ServiceCollectionExtensions
         }
 
         var config = EventBusConfig.CreateBuilder()
-            .WithConnectionRetryCount(options.ConnectionRetryCount)
             .WithSubscriberClientAppName(options.SubscriberClientAppName)
             .WithDefaultTopicName(options.DefaultTopicName)
             .WithEventNameSuffix(options.EventNameSuffix)
