@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "WebApi\WebApi.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fermion.EventBus.RabbitMq", "src\Fermion.EventBus.RabbitMq\Fermion.EventBus.RabbitMq.csproj", "{E6049B6C-49B8-47F2-B049-0FF08FE7230B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fermion.EventBus.AzureServiceBus", "src\Fermion.EventBus.AzureServiceBus\Fermion.EventBus.AzureServiceBus.csproj", "{35856093-FE7F-469E-BB24-9BEBD74C0501}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,7 @@ Global
 		{DF57AE85-63DD-46FA-A67F-E5B49FF531D6} = {41031B18-53A2-4935-B17D-193619137F74}
 		{9A8B871E-8D72-42D8-98DD-DFF3B571DDB5} = {41031B18-53A2-4935-B17D-193619137F74}
 		{E6049B6C-49B8-47F2-B049-0FF08FE7230B} = {41031B18-53A2-4935-B17D-193619137F74}
+		{35856093-FE7F-469E-BB24-9BEBD74C0501} = {41031B18-53A2-4935-B17D-193619137F74}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{DF57AE85-63DD-46FA-A67F-E5B49FF531D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -37,5 +40,9 @@ Global
 		{E6049B6C-49B8-47F2-B049-0FF08FE7230B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E6049B6C-49B8-47F2-B049-0FF08FE7230B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E6049B6C-49B8-47F2-B049-0FF08FE7230B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35856093-FE7F-469E-BB24-9BEBD74C0501}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35856093-FE7F-469E-BB24-9BEBD74C0501}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35856093-FE7F-469E-BB24-9BEBD74C0501}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35856093-FE7F-469E-BB24-9BEBD74C0501}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

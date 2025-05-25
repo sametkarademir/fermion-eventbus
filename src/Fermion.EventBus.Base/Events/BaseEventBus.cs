@@ -73,9 +73,10 @@ public abstract class BaseEventBus : IEventBus
     /// <param name="eventName">The name of the event to process.</param>
     /// <param name="message">The serialized event message.</param>
     /// <returns>A task representing the asynchronous operation.</returns>
-    protected async Task ProcessEvent(string eventName, string message)
+    protected async Task<bool> ProcessEvent(string eventName, string message)
     {
         eventName = ProcessEventName(eventName);
+        var processed = false;
         if (SubsManager.HasSubscriptionForEvent(eventName))
         {
             var subscriptions = SubsManager.GetHandlersForEvent(eventName);
@@ -84,7 +85,10 @@ public abstract class BaseEventBus : IEventBus
             foreach (var subscription in subscriptions)
             {
                 var handler = _serviceProvider.GetService(subscription.HandlerType);
-                if (handler == null) continue;
+                if (handler == null)
+                {
+                    continue;
+                }
 
                 var eventType = SubsManager.GetEventTypeByName(
                     $"{EventBusConfig.EventNamePrefix}{eventName}{EventBusConfig.EventNameSuffix}");
@@ -94,7 +98,11 @@ public abstract class BaseEventBus : IEventBus
                 var concreteType = typeof(IIntegrationEventHandler<>).MakeGenericType(eventType);
                 await (Task)concreteType.GetMethod("Handle").Invoke(handler, [integrationEvent]);
             }
+
+            processed = true;
         }
+
+        return processed;
     }
 
     /// <summary>
