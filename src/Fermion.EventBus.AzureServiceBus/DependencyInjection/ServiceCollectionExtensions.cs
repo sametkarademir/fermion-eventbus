@@ -1,3 +1,4 @@
+using Fermion.EventBus.AzureServiceBus.HealthCheck;
 using Fermion.EventBus.AzureServiceBus.Options;
 using Fermion.EventBus.AzureServiceBus.Services;
 using Fermion.EventBus.Base;
@@ -8,12 +9,12 @@ using HealthStatus = Microsoft.Extensions.Diagnostics.HealthChecks.HealthStatus;
 namespace Fermion.EventBus.AzureServiceBus.DependencyInjection;
 
 /// <summary>
-/// Extension methods for configuring the RabbitMQ event bus in the dependency injection container.
+/// Extension methods for configuring the Azure Service Bus event bus in the dependency injection container.
 /// </summary>
 public static class ServiceCollectionExtensions
 {
     /// <summary>
-    /// Adds the RabbitMQ event bus to the service collection.
+    /// Adds the Azure Service Bus event bus to the service collection.
     /// </summary>
     /// <param name="services">The service collection.</param>
     /// <param name="configureOptions">The action to configure the event bus options.</param>
@@ -49,16 +50,22 @@ public static class ServiceCollectionExtensions
         ));
 
         // Add health check if enabled
-        // if (options.EnableHealthCheck)
-        // {
-        //     services.AddHealthChecks()
-        //         .AddCheck<RabbitMqEventBusHealthCheck>(
-        //             name: "rabbitmq_eventbus",
-        //             failureStatus: HealthStatus.Unhealthy,
-        //             tags: ["rabbitmq", "eventbus"],
-        //             timeout: options.HealthCheckInterval
-        //         );
-        // }
+        if (options.EnableHealthCheck)
+        {
+            services.AddSingleton(new AzureServiceBusHealthCheckOptions
+            {
+                ConnectionString = options.ConnectionString,
+                TopicName = options.DefaultTopicName
+            });
+
+            services.AddHealthChecks()
+                .AddCheck<AzureServiceBusEventBusHealthCheck>(
+                    name: "azure_servicebus_eventbus",
+                    failureStatus: HealthStatus.Unhealthy,
+                    tags: ["azure", "servicebus", "eventbus"],
+                    timeout: options.HealthCheckInterval
+                );
+        }
 
         return services;
     }
