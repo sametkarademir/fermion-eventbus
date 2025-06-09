@@ -5,18 +5,23 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <PackageId>Fermion.EventBus.Base</PackageId>
-        <Version>0.0.2</Version>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Version>1.0.0</Version>
         <Authors>Samet Karademir</Authors>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
-        <RepositoryUrl>https://github.com/sametkarademir/fermion-eventbus</RepositoryUrl>
+        <PackageProjectUrl>https://github.com/sametkarademir/fermion-eventbus</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/sametkarademir/fermion-eventbus.git</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
         <PackageReadmeFile>readme.md</PackageReadmeFile>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+        <EmbedUntrackedSources>true</EmbedUntrackedSources>
+        <Deterministic>true</Deterministic>
     </PropertyGroup>
 
     <ItemGroup>
-        <None Update="readme.md">
-            <Pack>true</Pack>
-            <PackagePath>/</PackagePath>
-        </None>
+        <None Include="readme.md" Pack="true" PackagePath="/" />
     </ItemGroup>
 
     <ItemGroup>
